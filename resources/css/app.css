@@ -1,0 +1,413 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 128, 0.12), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(0, 128, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(128, 0, 255, 0.12), transparent 35%),
+        #050507;
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        conic-gradient(from 0deg,
+            rgba(255, 0, 128, 0.10),
+            rgba(255, 0, 0, 0.08),
+            rgba(255, 255, 0, 0.08),
+            rgba(0, 255, 128, 0.08),
+            rgba(0, 128, 255, 0.10),
+            rgba(128, 0, 255, 0.10),
+            rgba(255, 0, 128, 0.10));
+    filter: blur(100px);
+    animation: rgbRotate 18s linear infinite;
+}
+
+@keyframes rgbRotate {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.z-\[9999\] {
+    z-index: 9999;
+}
+
+.bg-white\/\[0\.03\] {
+    background-color: color-mix(in oklab, var(--color-white)
+            /* #fff = #ffffff */
+            3%, transparent);
+}
+
+.bg-gradient-to-br {
+    --tw-gradient-position: to bottom right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+}
+
+.from-violet-500\/\[0\.08\] {
+    --tw-gradient-from: color-mix(in oklab, var(--color-violet-500)
+            /* oklch(60.6% 0.25 292.717) */
+            8%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+@media (hover: hover) {
+    .hover\:bg-white\/\[0\.05\]:hover {
+        background-color: color-mix(in oklab, var(--color-white)
+                /* #fff = #ffffff */
+                5%, transparent);
+    }
+}
+
+@property --tw-gradient-position {
+    syntax: "*";
+    inherits: false;
+}
+
+@property --tw-gradient-from {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0000;
+}
+
+@property --tw-gradient-via {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0000;
+}
+
+@property --tw-gradient-to {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0000;
+}
+
+@property --tw-gradient-stops {
+    syntax: "*";
+    inherits: false;
+}
+
+@property --tw-gradient-via-stops {
+    syntax: "*";
+    inherits: false;
+}
+
+@property --tw-gradient-from-position {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --tw-gradient-via-position {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --tw-gradient-to-position {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.animate-page {
+    animation: pageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-sidebar {
+    animation: sidebarEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-header {
+    animation: headerEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-item {
+    opacity: 0;
+    animation: itemEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-item:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.animate-item:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.animate-item:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.animate-item:nth-child(4) {
+    animation-delay: 0.32s;
+}
+
+.animate-item:nth-child(5) {
+    animation-delay: 0.40s;
+}
+
+.animate-item:nth-child(6) {
+    animation-delay: 0.48s;
+}
+
+.animate-card {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease,
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.animate-card:hover {
+    transform: translateY(-4px);
+}
+
+.animate-button {
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.animate-button:hover {
+    transform: translateY(-2px);
+}
+
+.animate-icon {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        rotate 0.35s ease;
+}
+
+.animate-card:hover .animate-icon {
+    transform: scale(1.08) rotate(4deg);
+}
+
+.animate-link {
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.animate-link:hover {
+    transform: translateX(3px);
+}
+
+.animate-image {
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease;
+}
+
+.animate-image:hover {
+    transform: scale(1.03);
+}
+
+.animate-input {
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.animate-input:focus {
+    transform: translateY(-1px);
+}
+
+.animate-menu {
+    animation: menuEnter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-toast {
+    animation: toastEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-modal {
+    animation: modalEnter 0.35s ease both;
+}
+
+.animate-modal-content {
+    animation: modalContentEnter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-nav {
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.animate-nav:hover {
+    transform: translateX(3px);
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sidebarEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes headerEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes itemEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes menuEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toastEnter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalContentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+nav[aria-label="Pagination Navigation"] a,
+nav[aria-label="Pagination Navigation"] span {
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+nav[aria-label="Pagination Navigation"] a:hover {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+    color: white !important;
+}
+
+nav[aria-label="Pagination Navigation"] span[aria-current="page"] {
+    background-color: rgb(139, 92, 246) !important;
+    color: white !important;
+    border-color: rgb(139, 92, 246) !important;
+}
+
+nav[aria-label="Pagination Navigation"] span[aria-disabled="true"] {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.25) !important;
+}
